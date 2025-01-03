@@ -1,8 +1,11 @@
 # Neural Network Image Generator
 
-Dieses Repository enthält ein neuronales Netzwerk, das Bilder basierend auf Farbaktivierungen generiert und anpasst. Die Anwendung kombiniert Computer Vision, Deep Learning und GUI-Elemente, um eine interaktive Umgebung für die Bildverarbeitung bereitzustellen.
+Dieses Repository enthält ein neuronales Netzwerk, das Bilder basierend auf Farbaktivierungen generiert und anpasst. Die Anwendung kombiniert Computer Vision, Deep Learning und Weboberflächen-Elemente, um eine interaktive Umgebung für die Bildverarbeitung bereitzustellen.
 
-This repository contains a neural network that generates and adjusts images based on color activations. The application combines computer vision, deep learning, and GUI elements to provide an interactive environment for image processing.
+This repository contains a neural network that generates and adjusts images based on color activations. The application combines computer vision, deep learning, and web interface elements to provide an interactive environment for image processing.
+
+![image](https://github.com/user-attachments/assets/8911a9fe-0432-4f5e-ad40-e36c8e90066c)
+
 
 ---
 
@@ -19,12 +22,13 @@ This repository contains a neural network that generates and adjusts images base
   - Dynamische Generierung von Bildern.
 
 - **Neues Bild statt Skalierung:**
-  - Das generierte Bild wird **Pixel für Pixel komplett neu erstellt**. 
+  - Das generierte Bild wird **Pixel für Pixel komplett neu erstellt**.
   - Bei einer Vergrößerung auf 4K oder höhere Auflösungen erfolgt keine Hochrechnung wie in herkömmlichen Bildeditoren, sondern es wird ein völlig neues Bild auf Basis der ursprünglichen Daten generiert. Dadurch bleibt die **Bildqualität unverändert**, unabhängig von der Zielauflösung.
 
-- **GUI für einfache Nutzung:**
-  - Lade, bearbeite und speichere Bilder direkt über eine grafische Benutzeroberfläche.
-  - Konfiguriere Helligkeit, Kontrast und Bildauflösung.
+- **Weboberfläche für einfache Nutzung:**
+  - Lade Bilder direkt über die Weboberfläche.
+  - Passe Helligkeit, Kontrast und Bildauflösung an.
+  - Speichere die bearbeiteten Bilder.
 
 - **Fortschrittliche Bildverarbeitung:**
   - Parallele Verarbeitung mit `multiprocessing`.
@@ -46,9 +50,10 @@ This repository contains a neural network that generates and adjusts images base
   - The generated image is **completely rebuilt pixel by pixel**.
   - Enlarging to 4K or higher resolutions does not involve upscaling, as in traditional editors. Instead, a completely new image is generated based on the original data, ensuring **unchanged image quality**, regardless of target resolution.
 
-- **User-Friendly GUI:**
-  - Load, edit, and save images directly via a graphical interface.
-  - Configure brightness, contrast, and image resolution.
+- **User-Friendly Web Interface:**
+  - Load images directly via the web interface.
+  - Adjust brightness, contrast, and image resolution.
+  - Save the edited images.
 
 - **Advanced Image Processing:**
   - Parallel processing with `multiprocessing`.
@@ -61,7 +66,7 @@ This repository contains a neural network that generates and adjusts images base
 ### **Deutsch:**
 Stelle sicher, dass folgende Pakete installiert sind:
 - Python 3.8+
-- `customtkinter`
+- `gradio`
 - `Pillow`
 - `torch`
 - `numpy`
@@ -70,13 +75,13 @@ Stelle sicher, dass folgende Pakete installiert sind:
 
 Installiere die Abhängigkeiten mit:
 ```bash
-pip install customtkinter pillow torch numpy opencv-python
+pip install gradio pillow torch numpy opencv-python
 ```
 
 ### **English:**
 Ensure the following packages are installed:
 - Python 3.8+
-- `customtkinter`
+- `gradio`
 - `Pillow`
 - `torch`
 - `numpy`
@@ -85,7 +90,7 @@ Ensure the following packages are installed:
 
 Install dependencies using:
 ```bash
-pip install customtkinter pillow torch numpy opencv-python
+pip install gradio pillow torch numpy opencv-python
 ```
 
 ---
@@ -93,7 +98,7 @@ pip install customtkinter pillow torch numpy opencv-python
 ## Nutzung | Usage
 
 ### **Deutsch:**
-1. **Starte die GUI:**
+1. **Starte die Weboberfläche:**
    ```bash
    python main.py
    ```
@@ -103,10 +108,10 @@ pip install customtkinter pillow torch numpy opencv-python
    - Wähle Helligkeit, Kontrast und Auflösung.
 4. **Generiere ein Bild:**
    - Gehe zu `Datei > Bild generieren`.
-   - Das generierte Bild wird unter `kunst.png` gespeichert.
+   - Das generierte Bild wird unter `kunst.webp` gespeichert.
 
 ### **English:**
-1. **Start the GUI:**
+1. **Start the Web Interface:**
    ```bash
    python main.py
    ```
@@ -116,7 +121,7 @@ pip install customtkinter pillow torch numpy opencv-python
    - Choose brightness, contrast, and resolution.
 4. **Generate an Image:**
    - Navigate to `File > Generate Image`.
-   - The generated image will be saved as `kunst.png`.
+   - The generated image will be saved as `kunst.webp`.
 
 ---
 
@@ -126,7 +131,7 @@ pip install customtkinter pillow torch numpy opencv-python
 - **Neuronales Netzwerk:**
   - Jeder Knoten repräsentiert eine Farbe (z. B. Rot, Grün, Blau).
   - Aktivierungen basieren auf Farbhelligkeit und beeinflussen die Bildverarbeitung.
-  
+
 - **Bildgenerierung:**
   1. Hauptfarben extrahieren: Farben mit hoher Helligkeit werden priorisiert.
   2. Netzwerk erstellen: Knotenverbindungen mit zufälligen Gewichtungen.
@@ -137,7 +142,7 @@ pip install customtkinter pillow torch numpy opencv-python
 - **Neural Network:**
   - Each node represents a color (e.g., red, green, blue).
   - Activations are based on color brightness and influence image processing.
-  
+
 - **Image Generation:**
   1. Extract main colors: Prioritize colors with high brightness.
   2. Create network: Connect nodes with random weights.
@@ -149,17 +154,17 @@ pip install customtkinter pillow torch numpy opencv-python
 ## Beispiel | Example
 
 ### **Deutsch:**
-- **Originalbild:**  
+- **Originalbild:**
   ![Original Image](https://github.com/user-attachments/assets/fa99bed8-eb9e-40fb-b31e-df190fe9c0d0)
 
-- **Generiertes Bild:**  
+- **Generiertes Bild:**
   ![Generated Image](https://github.com/user-attachments/assets/63d477dc-5c02-4ec6-bf50-70c6575c6e48)
 
 ### **English:**
-- **Original Image:**  
+- **Original Image:**
   ![Original Image](https://github.com/user-attachments/assets/fa99bed8-eb9e-40fb-b31e-df190fe9c0d0)
 
-- **Generated Image:**  
+- **Generated Image:**
   ![Generated Image](https://github.com/user-attachments/assets/63d477dc-5c02-4ec6-bf50-70c6575c6e48)
 
 ---
@@ -171,7 +176,7 @@ pip install customtkinter pillow torch numpy opencv-python
   - Füge mehr Farben hinzu, um spezifische Anpassungen zu ermöglichen.
   - Implementiere ein Tool, um Aktivierungen und Gewichtungen grafisch darzustellen.
   - Optimiere die Performance für Echtzeitverarbeitung.
-  
+
 - **Debugging:**
   - Überprüfe Aktivierungswerte und Gewichtungen während der Bildgenerierung.
 
@@ -188,13 +193,12 @@ pip install customtkinter pillow torch numpy opencv-python
 
 ## Lizenz | License
 
-Dieses Projekt ist unter der MIT-Lizenz veröffentlicht. Siehe [LICENSE](LICENSE) für weitere Details.  
+Dieses Projekt ist unter der MIT-Lizenz veröffentlicht. Siehe [LICENSE](LICENSE) für weitere Details.
 This project is licensed under the MIT License. See [LICENSE](LICENSE) for details.
 
 ---
 
 ## Autoren | Authors
 
-Entwickelt von [Ralf Krümmel].  
+Entwickelt von [Ralf Krümmel].
 Developed by [Ralf Krümmel].
-
