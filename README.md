@@ -8,6 +8,7 @@ This repository contains a neural network that generates and adjusts images base
 
 ![image](https://github.com/user-attachments/assets/8911a9fe-0432-4f5e-ad40-e36c8e90066c)
 
+![image](https://github.com/user-attachments/assets/ab79067d-2aed-4f7e-878e-7a4405ea04d8)
 
 ---
 
